@@ -1,4 +1,4 @@
-const api = "https://count.bilinclisecmen.com";
+const api = "https://count.bilinclisecmen.com:5001";
 
 const quizLimit = 7; // default: 10
 const answerTime = 15; //default: 15

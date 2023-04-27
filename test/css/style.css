@@ -72,11 +72,11 @@ audio {
 }
 
 .red-gradient {
-    background: #e30c17 linear-gradient(90deg, #e30c17, #94141b);
+    background: #d32130 linear-gradient(90deg, #d32130, #94141b);
 }
 
 .red-gradient:hover {
-    background: #81050c linear-gradient(90deg, #e30c17, #bd0b13,  #bd0b13, #94141b);
+    background: #81050c linear-gradient(90deg, #d32130, #bd0b13,  #bd0b13, #94141b);
 }
 
 .blue-gradient {
@@ -394,7 +394,7 @@ li:hover {
 @keyframes progressbar-countdown {
   0% {
     width: 100%;
-    background: #E30A17;
+    background: #d32130;
   }
   100% {
     width: 0%;
@@ -420,7 +420,7 @@ li:hover {
 }
 
 #info {
-  background: #e30c17;
+  background: #d32130;
   color: #FFFFFF;
   border-radius: 50%;
   width: 30px;
@@ -492,14 +492,14 @@ li:hover {
 }
 
 .certProgress-moved .certProgressBar {
-  background-color: #E30C17;
+  background-color: #d32130;
   animation: certProgress 10s infinite;
 }
 
 @keyframes certProgress {
   0% {
     width: 0%;
-    background: #E30C17;
+    background: #d32130;
   }
 
   100% {

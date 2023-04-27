@@ -21,6 +21,17 @@ body {
     margin: 0;
 }
 
+.transparent_box {
+    display: inline-block;
+    background: rgb(255 255 255 / 20%);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.transparent_box span {
+    margin-right: 3px;
+}
+
 #success_rate {
     right: 3vw;
     bottom: 1vw;

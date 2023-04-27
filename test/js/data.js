@@ -7,8 +7,8 @@ const answerTime = 15; //default: 15
 
 const quizData = [
     {
-        question: "Türkiye gibi demokratik hukuk devletlerinde mevcut ekonomik durumun sorumlusu kimdir?",
-        a: "Muhalefet partileri",
+        question: "Demokratik bir hukuk devletinde ekonominin sorumluluğu kimdedir?",
+        a: "Ana muhalefet partisi",
         b: "Hükümet",
         c: "Halk",
         d: "Belediye Başkanı",

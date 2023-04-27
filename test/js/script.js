@@ -93,7 +93,15 @@ function drawImage(name, date, certificateNumber, totalTime) {
     theName = toNameCase(name);
 
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-    ctx.font = '150px Parisienne';
+
+    let countChars = theName.length;
+    if(countChars <= 15){
+        ctx.font = '150px Parisienne';
+    } else {
+        actualFontSize = 150 - (countChars - 15) * 5;
+        ctx.font = actualFontSize + 'px Parisienne';
+    }
+
     ctx.fillStyle = '#B4252E';
     ctx.textAlign = "center";
     ctx.fillText(theName, 950, 810);

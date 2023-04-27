@@ -9,13 +9,9 @@ let totalTime = "";
 let tried = localStorage.getItem('tried') || 1;
 const today = formatDate(new Date());
 const downloadBtn = document.getElementById('download-btn');
-const downloadBtn2 = document.getElementById('download-btn-2');
 
 const image = new Image();
 image.src = 'image/certificate.png?v=1';
-
-//const image2 = new Image();
-//image2.src = 'image/certificate-2.png?v=1';
 
 if(CSS.registerProperty !== undefined){
     CSS.registerProperty({
@@ -118,8 +114,6 @@ function drawImage(name, date, certificateNumber, totalTime) {
     //ctx.font = '50px Recursive';
     //ctx.fillText(totalTime, 930, 470);
 
-    // Sponsor fonksiyonu bu işleri hallediyor. DU alltaki 4 satırı tekrar aktif ettim.
-    
     document.getElementById("qc").style.display = "none";
     document.getElementById("loader").style.display = "block";
 
@@ -138,57 +132,8 @@ function drawImage(name, date, certificateNumber, totalTime) {
         document.getElementById("sertifika_img").src = canvas.toDataURL('image/png');
         document.getElementById("certificate-1").style.display = "block";
 
-        // Sponsor fonksiyonu bu işi hallediyor. DU alltaki 4 satırı tekrar aktif ettim.
         document.getElementById("loader").style.display = "none";
         document.getElementById("certificateImageContainer").style.display = "flex";
-        let created = new Audio("sound/created.mp3");
-        created.play();
-    }, 9500);
-}
-
-function drawSponsorImage(name, date, certificateNumber, onlySponsor = false) {
-
-    theName = toNameCase(name);
-
-    ctx2.drawImage(image2, 0, 0, canvas.width, canvas.height);
-    ctx2.font = '100px Parisienne';
-    ctx2.fillStyle = '#214F21';
-    ctx2.textAlign = "center";
-    ctx2.fillText(theName, 950, 980);
-
-    ctx2.font = '40px Roboto Mono';
-    ctx2.fillText(date, 350, 1250);
-    ctx2.fillText(certificateNumber, 1552, 1250);
-
-    document.getElementById("qc").style.display = "none";
-    document.getElementById("loader").style.display = "block";
-
-    let keyboard = new Audio("sound/keyboard.mp3");
-    keyboard.play();
-    
-            
-    if(onlySponsor){
-        document.getElementById("creating-certificates-message").textContent = "SERTİFİKA OLUŞTURULUYOR...";
-        const mainContainer = document.getElementById('main_container');
-        if(screenWidth > 720){
-            mainContainer.style.paddingTop = "5vw";
-        }
-    }
-
-    setTimeout(function() {
-
-        document.getElementById("k_sertifika_img").src = canvas2.toDataURL('image/png');
-
-        document.getElementById("loader").style.display = "none";
-        
-        if(onlySponsor){
-            document.getElementById("certificateImageContainerInner").style.width = "700px";
-            document.getElementById("download-btn").style.display = "none";
-        }
-        
-        document.getElementById("certificateImageContainer").style.display = "flex";
-        //document.getElementById("certificate-2").style.display = "block";
-        
         let created = new Audio("sound/created.mp3");
         created.play();
     }, 9500);
@@ -197,11 +142,6 @@ function drawSponsorImage(name, date, certificateNumber, onlySponsor = false) {
 downloadBtn.addEventListener('click', function () {
     downloadBtn.href = canvas.toDataURL('image/png');
     downloadBtn.download = "sertifika-" + testerName + ".png";
-});
-
-downloadBtn2.addEventListener('click', function () {
-    downloadBtn2.href = canvas2.toDataURL('image/png');
-    downloadBtn2.download = "zeytin-" + testerName + ".png";
 });
 
 function clearLiHighlights(){
@@ -299,22 +239,6 @@ startButton.addEventListener('click', function () {
 
 })
 
-function newSponsorCertificate(sponsor, add = false){
-    let xhr = new XMLHttpRequest();
-    let sponsorCertificateNumber = 0;
-    if(add){
-        xhr.open("GET", api + "/incr/success2");
-    } else {
-        xhr.open("GET", api + "/get/success2");
-    }
-    xhr.responseType = "json";
-    xhr.onload = function() {
-        console.log(sponsor + " sertifika sayısı: " + this.response.value)
-        document.getElementById("sponsorCount").innerText = String(this.response.value);
-    }
-    xhr.send();  
-}
-
 function getHitNumber(add = false) {
     let xhr = new XMLHttpRequest();
     if(add){
@@ -346,22 +270,14 @@ function appendTotalCertificateNumber(hitNumber) {
 }
 
 
-function getCertificateNumber(name, onlySponsor = false) {
+function getCertificateNumber(name) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", api + "/incr/success");
     xhr.responseType = "json";
     xhr.onload = function() {
         let certificateNumber = String(this.response.value).padStart(8, "0");
-        
-        if(onlySponsor){
-            drawSponsorImage(name, today, certificateNumber, true);
-        } else {
-            drawImage(name, today, certificateNumber, totalTime);
-            //drawSponsorImage(name, today, certificateNumber);
-        }
-        
+        drawImage(name, today, certificateNumber, totalTime);
         getHitNumber();
-        //newSponsorCertificate("k", true);
     }
     xhr.send();
 }
@@ -454,22 +370,12 @@ function getSelected() {
     return answer
 }
 
-function KeyPress(e) {
-    var evtobj = window.event? event : e
-    if (evtobj.keyCode === 75 && evtobj.ctrlKey) {
-        newSponsorCertificate("k");
-        document.getElementById("sponsorCountContainer").style.display = "inline-block";
-    }
-}
-
-document.onkeydown = KeyPress;
-
 function playNow(sound) {
     let audio = document.getElementById(sound);
     audio.play();
 }
 
-function getName(onlySponsor = false) {
+function getName() {
     let nameInput = document.getElementById("name");
     let nameValue = nameInput.value;
     testerName = nameInput.value;
@@ -478,11 +384,7 @@ function getName(onlySponsor = false) {
         nameInput.placeholder = "Buraya adınızı yazmalısınız";
         playNow("invalid");
     } else {
-        if(onlySponsor){
-            getCertificateNumber(nameValue, true)
-        } else {
-            getCertificateNumber(nameValue, false)
-        }
+      getCertificateNumber(nameValue, false)
     }
 }
 

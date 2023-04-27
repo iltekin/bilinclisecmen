@@ -7,7 +7,7 @@
 
 body {
     background-color: #ffffff;
-    background-image: url("../image/background.jpg?v=15");
+    background-image: url("../image/background.jpg?v=16");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -146,6 +146,8 @@ audio {
 .welcome-inner {
     padding: 20px;
     text-align: center;
+    font-size: 20px;
+    color: #96161c;
 }
 
 h2 {

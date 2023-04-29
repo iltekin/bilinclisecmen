@@ -391,6 +391,10 @@ li:hover {
     }
 }
 
+.brandColor {
+    color: #D32131;
+}
+
 #menuContents {
     margin-top: 40px;
     border-radius: 10px;

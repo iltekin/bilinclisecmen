@@ -1,2 +1,3 @@
-# bilinclisecmen
-bilinclisecmen.com web sitesi
+# Bilinçli Seçmen
+
+https://bilinclisecmen.com

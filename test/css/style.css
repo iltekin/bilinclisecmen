@@ -7,7 +7,7 @@
 
 body {
     background-color: #ffffff;
-    background-image: url("../image/background.jpg?v=16");
+    background-image: url("../image/background.jpg?v=17");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -397,7 +397,8 @@ li:hover {
     background-color: #ffffff;
     padding: 10px;
     box-shadow: 0 0 10px 10px rgb(100 100 100 / 10%);
-    width: 300px;
+    max-width: 500px;
+    margin-left: 6vw;
 }
 
 #menuContents h2 {

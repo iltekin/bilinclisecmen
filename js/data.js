@@ -7,7 +7,7 @@ const answerTime = 15; //default: 15
 
 const quizData = [
     {
-        question: "Demokratik bir hukuk devletinde ekonominin sorumluluğu kimdedir?",
+        question: "Demokratik bir hukuk devletinde ülke ekonomisinin idare ve sorumluluğu hangisindedir?",
         a: "Ana muhalefet partisi",
         b: "Hükümet",
         c: "Halk",
@@ -15,7 +15,7 @@ const quizData = [
         correct: "b",
     },
     {
-        question: "Anayasamızın 101. maddesine göre bir kişi en fazla kaç kez Cumhurbaşkanı olabilir?",
+        question: "Anayasamızın 101. maddesine göre bir kişi en fazla kaç defa Cumhurbaşkanı olabilir?",
         a: "1",
         b: "2",
         c: "3",
@@ -23,7 +23,7 @@ const quizData = [
         correct: "b",
     },
     {
-        question: "Hangisi Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanıdır?",
+        question: "Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı kimdir?",
         a: "İsmet İnönü",
         b: "Celal Bayar",
         c: "Mustafa Kemal Atatürk",
@@ -33,7 +33,7 @@ const quizData = [
     {
         question: "1999 yılında geçici olarak çıkarılan fakat 2005 yılında kalıcı hale getirilen Özel İletişim Vergisi halktan hangi amaçla alınmaya başlanmıştır?",
         a: "Yol ve köprü yapmak",
-        b: "Uçak almak",
+        b: "Uçak satın almak",
         c: "Depremin yol açtığı ekonomik kayıpları gidermek",
         d: "Mülteciler için harcamak",
         correct: "c",
@@ -55,7 +55,7 @@ const quizData = [
         correct: "a",
     },
     {
-        question: "2018’de çıkarılan imar affında Türkiye çapında 3 milyon 152 bin kaçak yapıya yapı kayıt belgesi verildi, aşağıdakilerden hangisi bu yapıların bulunduğu illerden biridir?",
+        question: "Aşağıdakilerden hangisi 2018’de çıkarılan imar affıyla yapı kayıt belgesi verilen kaçak yapıların bulunduğu illerden biridir?",
         a: "Gaziantep",
         b: "Hatay",
         c: "Adıyaman",
@@ -73,8 +73,8 @@ const quizData = [
     {
         question: "Hangisi Türkiye'nin komşusu değildir?",
         a: "İran",
-        b: "Irak",
-        c: "Rusya",
+        b: "Gürcistan",
+        c: "Katar",
         d: "Suriye",
         correct: "c",
     },

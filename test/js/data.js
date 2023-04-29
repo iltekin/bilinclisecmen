@@ -47,7 +47,7 @@ const quizData = [
         correct: "d",
     },
     {
-        question: "Hangisi millet tarafından seçilir?",
+        question: "Hangisi halk tarafından seçilir?",
         a: "Büyükşehir Belediye Başkanı",
         b: "İçişleri Bakanı",
         c: "Vali",
@@ -63,10 +63,10 @@ const quizData = [
         correct: "d",
     },
     {
-        question: "250.000 ABD doları değerinde taşınmaz mal satın almış olan bir yabancıya Türk vatandaşlığı verilmesi için gereken ek şartlar hangileridir?",
+        question: "Türkiye'den 400.000 ABD doları değerinde bir konut satın almış olan bir yabancıya Türk vatandaşlığı verilmesi için gereken ek şart aşağıdakilerden hangisidir?",
         a: "Türkiye'de 5 yıl ikamet etmiş olmak",
         b: "Türkçe bilmek",
-        c: "Kendi ülkesinde suç işlememiş olmak",
+        c: "Türkiye'nin tarihi ve kültürü hakkında bilgi sahibi olmak",
         d: "Hiçbiri",
         correct: "d",
     },

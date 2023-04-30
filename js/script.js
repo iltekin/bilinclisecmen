@@ -311,11 +311,21 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const prefix = document.getElementById('prefix')
 const sender = document.getElementById('sender')
+const sources = document.getElementById('sources')
 const submitBtn = document.getElementById('submit')
 
 let currentQuiz = 0
 let score = 0
 let totalAnswerTime = quizLimit * answerTime;
+
+function createSourceLink(URL, number) {
+    var a = document.createElement('a');
+    var linkText = document.createTextNode("[" + number + "]");
+    a.appendChild(linkText);
+    a.target = "_blank";
+    a.href = URL;
+    return a;
+}
 
 function loadQuiz() {
     deselectAnswers()
@@ -333,8 +343,27 @@ function loadQuiz() {
     } else {
         sender.innerText = "";
     }
-    
-    
+
+    if(currentQuizData.sources){
+
+        if(currentQuizData.sources.length > 1){
+            sources.innerText = "Kaynaklar: ";
+        } else {
+            sources.innerText = "Kaynak: ";
+        }
+
+        for (let i = 0; i < currentQuizData.sources.length; i++) {
+            if(i !== currentQuizData.sources.length - 1){
+                sources.appendChild(createSourceLink(currentQuizData.sources[i], i + 1));
+                sources.appendChild(document.createTextNode(", "));
+            } else {
+                sources.appendChild(createSourceLink(currentQuizData.sources[i], i + 1));
+            }
+        }
+    } else {
+        sources.innerText = "";
+    }
+
     if(currentQuizData.prefix){
         prefix.innerText = currentQuizData.prefix;
     } else {

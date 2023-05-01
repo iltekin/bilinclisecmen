@@ -9,7 +9,7 @@ const today = formatDate(new Date());
 const downloadBtn = document.getElementById('download-btn');
 
 const image = new Image();
-image.src = 'image/certificate.jpg?v=26';
+image.src = 'image/certificate.png?v=27';
 
 if(CSS.registerProperty !== undefined){
     CSS.registerProperty({
@@ -128,7 +128,7 @@ function drawImage(name, date, certificateNumber, totalTime) {
 
     setTimeout(function() {
 
-        document.getElementById("sertifika_img").src = canvas.toDataURL('image/jpg');
+        document.getElementById("sertifika_img").src = canvas.toDataURL('image/png');
         document.getElementById("certificate-1").style.display = "block";
 
         document.getElementById("loader").style.display = "none";
@@ -139,8 +139,8 @@ function drawImage(name, date, certificateNumber, totalTime) {
 }
 
 downloadBtn.addEventListener('click', function () {
-    downloadBtn.href = canvas.toDataURL('image/jpeg');
-    downloadBtn.download = "sertifika-" + testerName + ".jpg";
+    downloadBtn.href = canvas.toDataURL('image/png');
+    downloadBtn.download = "sertifika-" + testerName + ".png";
 });
 
 function clearLiHighlights(){

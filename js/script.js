@@ -111,8 +111,7 @@ function drawImage(name, date, certificateNumber, totalTime) {
 
     ctx.fillStyle = '#B4252E';
     ctx.font = '31px Recursive';
-    //ctx.fillText(totalTime, 720, 560);
-    ctx.fillText(25, 725, 564);
+    ctx.fillText(totalTime, 725, 564);
 
     document.getElementById("qc").style.display = "none";
     document.getElementById("loader").style.display = "block";

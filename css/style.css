@@ -7,7 +7,7 @@
 
 body {
     background-color: #ffffff;
-    background-image: url("../image/background.jpg?v=19");
+    background-image: url("../image/background.jpg?v=20");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,6 +88,22 @@ audio {
 
 .red-gradient:hover {
     background: #81050c linear-gradient(90deg, #d32130, #bd0b13, #bd0b13, #94141b);
+}
+
+.twitter-gradient {
+    background: #0d7cc0 linear-gradient(90deg, #0d7cc0, #1DA1F2);
+}
+
+.twitter-gradient:hover {
+    background: #0970af linear-gradient(90deg, #0970af, #0d7cc0, #1DA1F2);
+}
+
+.purple-gradient {
+    background: #772493 linear-gradient(90deg, #772493, #ac1cba);
+}
+
+.purple-gradient:hover {
+    background: #46095B linear-gradient(90deg, #46095B, #772493, #ac1cba);
 }
 
 .blue-gradient {
@@ -432,10 +448,11 @@ li:hover {
 #download-notice {
     display: none;
     margin: 20px 10px;
-    padding: 10px;
+    padding: 20px 10px;
     line-height: 1.2;
-    background: rgb(232 194 88 / 25%);
+    background: rgb(4 142 60 / 80%);
     border-radius: 10px;
+    color: #FFFFFF;
 }
 
 

@@ -1,9 +1,12 @@
 const api = "https://count.bilinclisecmen.com:5001";
+const quizLimit = 1; // default: 10
+const answerTime = 15; //default: 15
 
-const quizLimit = 10; // default: 10
-const answerTime = 1115; //default: 15
-
-// Evet cevaplar görünüyor çünkü ben görünmesini tercih ettim. Teşekkür ederim.
+// Bu dosyayı keşfedip sosyal medyada paylaşan kişi aşağıdakilerden hangisidir?
+// a: "HAckEr",
+// b: "HAckEr",
+// c: "HAckEr",
+// d: "HAckEr",
 
 const quizData = [
     {

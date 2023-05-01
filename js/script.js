@@ -1,7 +1,5 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const canvas2 = document.getElementById('canvas2');
-const ctx2 = canvas2.getContext('2d');
 const screenWidth = screen.width;
 let testerName = "";
 let start = "";
@@ -21,6 +19,7 @@ if(CSS.registerProperty !== undefined){
         inherits: true,
     });
     document.getElementById("certPercent").style.display = "block";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function numberWithCommas(x) {
@@ -100,19 +99,20 @@ function drawImage(name, date, certificateNumber, totalTime) {
 
     ctx.fillStyle = '#B4252E';
     ctx.textAlign = "center";
-    ctx.fillText(theName, 950, 810);
+    ctx.fillText(theName, 950, 720);
 
     ctx.font = '40px Roboto Mono';
-    ctx.fillText(date, 495, 1140);
-    ctx.fillText(certificateNumber, 1435, 1140);
+    ctx.fillText(date, 505, 1050);
+    ctx.fillText(certificateNumber, 1440, 1050);
     
     ctx.font = '80px Recursive';
     ctx.fillStyle = '#FFFFFF';
     ctx.fillText(createDots(), 960, 25);
 
-    //ctx.fillStyle = '#E7C76C';
-    //ctx.font = '50px Recursive';
-    //ctx.fillText(totalTime, 930, 470);
+    ctx.fillStyle = '#B4252E';
+    ctx.font = '31px Recursive';
+    //ctx.fillText(totalTime, 720, 560);
+    ctx.fillText(25, 725, 564);
 
     document.getElementById("qc").style.display = "none";
     document.getElementById("loader").style.display = "block";
@@ -254,6 +254,23 @@ function getHitNumber(add = false) {
     xhr.send();
 }
 
+function getHitNumberDev(add = false) {
+    document.getElementById("hits").innerText = String(numberWithCommas(356));
+    appendTotalCertificateNumber(356);
+}
+
+function appendTotalCertificateNumberDev(hitNumber) {
+    document.getElementById("certificates").innerText = String(numberWithCommas(356));
+    let percentage = (100 * 356) / hitNumber;
+    document.getElementById("success_percent").innerText = "%" + String(Math.floor(percentage));
+    document.getElementById("success_rate").style.display = "block";
+}
+
+function getCertificateNumberDev(name) {
+    let certificateNumber = String(356).padStart(8, "0");
+    drawImage(name, today, certificateNumber, totalTime);
+    getHitNumber();
+}
 
 function appendTotalCertificateNumber(hitNumber) {
     let xhr = new XMLHttpRequest();
@@ -268,7 +285,6 @@ function appendTotalCertificateNumber(hitNumber) {
     }
     xhr.send();
 }
-
 
 function getCertificateNumber(name) {
     let xhr = new XMLHttpRequest();

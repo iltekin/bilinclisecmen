@@ -93,7 +93,7 @@ function drawImage(name, date, certificateNumber, totalTime) {
     if(countChars <= 15){
         ctx.font = '150px Parisienne';
     } else {
-        actualFontSize = 150 - (countChars - 15) * 5;
+        actualFontSize = 150 - (countChars - 15) * 7;
         ctx.font = actualFontSize + 'px Parisienne';
     }
 

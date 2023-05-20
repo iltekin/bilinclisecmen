@@ -26,7 +26,9 @@ body {
     justify-content:center;
     flex-direction: column;
     text-align: center;
-    margin-top:10px;
+    left: 3vw;
+    bottom: 1vw;
+    position: absolute;
 }
 
 .transparent_box {
@@ -554,6 +556,11 @@ li:hover {
 }
 
 @media screen and (max-width: 921px) {
+
+    .kvkk-container {
+        position: static;
+        margin-top:10px;
+    }
 
     h2 {
         font-size: 15px;

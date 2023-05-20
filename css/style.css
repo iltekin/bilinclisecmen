@@ -7,7 +7,7 @@
 
 body {
     background-color: #ffffff;
-    background-image: url("../image/background.jpg?v=29");
+    background-image: url("../image/background.jpg?v=30");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
     margin: 0;
 }
 
-.kvkk-container {
+#kvkk-container {
     display:flex;
     justify-content:center;
     flex-direction: column;
@@ -557,7 +557,7 @@ li:hover {
 
 @media screen and (max-width: 921px) {
 
-    .kvkk-container {
+    #kvkk-container {
         position: static;
         margin-top:10px;
     }

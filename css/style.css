@@ -7,7 +7,7 @@
 
 body {
     background-color: #ffffff;
-    background-image: url("../image/background.jpg?v=27");
+    background-image: url("../image/background.jpg?v=28");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,6 +19,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+}
+
+.kvkk-container {
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+    margin-top:10px;
 }
 
 .transparent_box {

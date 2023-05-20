@@ -9,7 +9,7 @@ const today = formatDate(new Date());
 const downloadBtn = document.getElementById('download-btn');
 
 const image = new Image();
-image.src = 'image/certificate.png?v=30';
+image.src = 'image/certificate.png?v=31';
 
 if(CSS.registerProperty !== undefined){
     CSS.registerProperty({

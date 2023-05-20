@@ -421,6 +421,12 @@ function playNow(sound) {
 
 function getName() {
     let nameInput = document.getElementById("name");
+    let kvkkInput = document.getElementById("kvkk_onay");
+
+    if(!kvkkInput.checked){
+        alert("KVKK onayı vermelisiniz");
+    }
+
     let nameValue = nameInput.value;
     testerName = nameInput.value;
 
@@ -479,6 +485,10 @@ submitBtn.addEventListener('click', () => {
                     ${quizLimit} sorunun tamamını doğru cevaplayarak Bilinçli Seçmen Sertifikası kazandınız. 
                     </p>
                     <input type="text" id="name" name="name" placeholder="Ad Soyad">
+                    <div style="font-size: 12px; text-align: left">
+                        <input type="checkbox" id="kvkk_onay" name="name" style="width: auto">
+                        <label for="kvkk_onay"><a class="brandColor" href="kvkk.html" target="_blank">KVKK Aydınlatma Metnini</a> okudum, anladım.</label>
+                    </div>
                 </div>
                 </div>
                 <button class="red-gradient" onclick="getName()">Sertifikamı Oluştur</button>

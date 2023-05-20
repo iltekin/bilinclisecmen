@@ -9,7 +9,7 @@ const today = formatDate(new Date());
 const downloadBtn = document.getElementById('download-btn');
 
 const image = new Image();
-image.src = 'image/certificate.png?v=31';
+image.src = 'image/certificate.png?v=32';
 
 if(CSS.registerProperty !== undefined){
     CSS.registerProperty({
@@ -425,16 +425,16 @@ function getName() {
 
     if(!kvkkInput.checked){
         alert("KVKK onayı vermelisiniz");
-    }
-
-    let nameValue = nameInput.value;
-    testerName = nameInput.value;
-
-    if(nameValue === "" || nameValue === undefined){
-        nameInput.placeholder = "Buraya adınızı yazmalısınız";
-        playNow("invalid");
     } else {
-      getCertificateNumber(nameValue, false)
+        let nameValue = nameInput.value;
+        testerName = nameInput.value;
+
+        if(nameValue === "" || nameValue === undefined){
+            nameInput.placeholder = "Buraya adınızı yazmalısınız";
+            playNow("invalid");
+        } else {
+            getCertificateNumber(nameValue, false)
+        }
     }
 }
 
